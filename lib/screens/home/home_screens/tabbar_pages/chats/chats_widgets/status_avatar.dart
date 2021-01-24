@@ -1,5 +1,6 @@
 import 'package:WhatsAppX/models/status_models/user_status.dart';
 import 'package:WhatsAppX/screens/home/home_screens/home_widgets/custom_avatar.dart';
+import 'package:WhatsAppX/screens/home/home_screens/tabbar_pages/chats/chats_screens/user_status_screen/user_status_screen_page.dart';
 import 'package:WhatsAppX/styles/colors.dart';
 import 'package:WhatsAppX/util/constants/icons_data.dart';
 import 'package:flutter/material.dart';
@@ -13,7 +14,10 @@ class StatusAvatar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {},
+      onTap: () {
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => UserStatusScreenPage()));
+      },
       child: Padding(
         padding: EdgeInsets.symmetric(horizontal: 8.0, vertical: 10),
         child: Column(

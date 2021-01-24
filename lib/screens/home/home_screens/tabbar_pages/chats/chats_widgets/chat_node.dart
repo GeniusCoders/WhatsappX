@@ -19,7 +19,7 @@ class ChatNode extends StatelessWidget {
             MaterialPageRoute(builder: (context) => UserChatScreenPage()));
       },
       leading: CustomAvatar(
-        radius: 24,
+        radius: 26,
         imgUrl: userChat.profilePhoto,
         isShowActiveIcon: true,
       ),
