@@ -13,6 +13,7 @@ class CustomAppBar extends PreferredSize {
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      backgroundColor: darkHeaderColor,
       leading: IconButton(
         onPressed: () {
           Navigator.pop(context);
