@@ -116,6 +116,41 @@ class CustomIcons {
         size: size,
       );
 
+  FaIcon get keyIcon => FaIcon(
+        FontAwesomeIcons.key,
+        color: color,
+        size: size,
+      );
+
+  FaIcon get paymentIcon => FaIcon(
+        FontAwesomeIcons.creditCard,
+        color: color,
+        size: size,
+      );
+
+  FaIcon get infoIcon => FaIcon(
+        FontAwesomeIcons.solidQuestionCircle,
+        color: color,
+        size: size,
+      );
+  FaIcon get bellIcon => FaIcon(
+        FontAwesomeIcons.solidBell,
+        color: color,
+        size: size,
+      );
+
+  FaIcon get userIcon => FaIcon(
+        FontAwesomeIcons.solidUser,
+        color: color,
+        size: size,
+      );
+
+  FaIcon get chartIcon => FaIcon(
+        FontAwesomeIcons.chartPie,
+        color: color,
+        size: size,
+      );
+
   Icon get editIcon => Icon(
         Icons.edit,
         color: color,
