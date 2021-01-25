@@ -1,3 +1,4 @@
+import 'package:WhatsAppX/screens/home/home_screens/tabbar_pages/chats/chats_screens/chat_screens_widgets/list_view_attachments.dart';
 import 'package:WhatsAppX/styles/colors.dart';
 import 'package:circular_reveal_animation/circular_reveal_animation.dart';
 import 'package:flutter/material.dart';
@@ -20,37 +21,24 @@ class ChatAttachmentBox extends StatelessWidget {
   Widget build(BuildContext context) {
     return CircularRevealAnimation(
       child: Container(
-        width: 300,
-        height: 220,
-        padding: EdgeInsets.all(10),
-        decoration: BoxDecoration(
-          color: darkHeaderColor,
-          borderRadius: BorderRadius.circular(10),
-        ),
-        child: Wrap(
-          direction: Axis.horizontal,
-          spacing: 40,
-          runSpacing: 20,
-          crossAxisAlignment: WrapCrossAlignment.center,
-          alignment: WrapAlignment.center,
-          children: List.generate(
-              attachmentsList.length,
-              (index) => Column(
-                    children: [
-                      CircleAvatar(
-                        backgroundImage: AssetImage(
-                            'assets/${attachmentsList[index]['image']}'),
-                        radius: 26,
-                      ),
-                      SizedBox(height: 10),
-                      Text(
-                        attachmentsList[index]['title'],
-                        style: TextStyle(color: whiteColor),
-                      )
-                    ],
-                  )),
-        ),
-      ),
+          width: 300,
+          height: 220,
+          padding: EdgeInsets.all(10),
+          decoration: BoxDecoration(
+            color: darkHeaderColor,
+            borderRadius: BorderRadius.circular(10),
+          ),
+          child: Wrap(
+              direction: Axis.horizontal,
+              spacing: 20,
+              runSpacing: 20,
+              crossAxisAlignment: WrapCrossAlignment.center,
+              alignment: WrapAlignment.center,
+              children: List.generate(attachmentsList.length, (index) {
+                return AttachmentView(
+                    image: attachmentsList[index]['image'],
+                    title: attachmentsList[index]['title']);
+              }))),
       animation: animation,
       centerOffset: Offset(300, 220),
     );

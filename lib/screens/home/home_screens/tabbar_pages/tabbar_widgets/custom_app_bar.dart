@@ -1,4 +1,6 @@
 import 'package:WhatsAppX/screens/home/home_screens/home_widgets/custom_avatar.dart';
+import 'package:WhatsAppX/screens/home/home_screens/profile/profile_page.dart';
+import 'package:WhatsAppX/screens/home/home_screens/setting_page/setting_page.dart';
 import 'package:WhatsAppX/styles/colors.dart';
 import 'package:WhatsAppX/util/constants/icons_data.dart';
 import 'package:WhatsAppX/util/constants/profile_images.dart';
@@ -25,30 +27,36 @@ buildCustomAppBar(
     child: Column(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: <Widget>[
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 6),
-          child: Row(
-            children: <Widget>[
-              CustomAvatar(
-                imgUrl: user2,
-                isShowActiveIcon: true,
-              ),
-              SizedBox(
-                width: 14.0,
-              ),
-              Expanded(
-                child: Text('Hi, Demon',
-                    style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.w600,
-                        color: whiteColor)),
-              ),
-              IconButton(
-                icon: CustomIcons().searchIcon,
-                onPressed: () {},
-              ),
-              _buildPopupMenuButton(tabController)
-            ],
+        GestureDetector(
+          onTap: () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => ProfilePage()));
+          },
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 6),
+            child: Row(
+              children: <Widget>[
+                CustomAvatar(
+                  imgUrl: user2,
+                  isShowActiveIcon: true,
+                ),
+                SizedBox(
+                  width: 14.0,
+                ),
+                Expanded(
+                  child: Text('Hi, Demon',
+                      style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.w600,
+                          color: whiteColor)),
+                ),
+                IconButton(
+                  icon: CustomIcons().searchIcon,
+                  onPressed: () {},
+                ),
+                _buildPopupMenuButton(tabController, context)
+              ],
+            ),
           ),
         ),
         TabBar(
@@ -65,13 +73,16 @@ buildCustomAppBar(
   );
 }
 
-_buildPopupMenuButton(TabController tabController) {
+_buildPopupMenuButton(TabController tabController, BuildContext context) {
   if (getIsChatList(tabController) || getIsStatusList(tabController))
     return PopupMenuButton(
       color: darkHeaderColor,
       icon: CustomIcons().optionIcon,
       onSelected: (value) {
-        print(value);
+        if (value == 1005) {
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => SettingPage()));
+        }
       },
       itemBuilder: (BuildContext _) {
         return [

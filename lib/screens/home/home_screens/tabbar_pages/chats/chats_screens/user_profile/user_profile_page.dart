@@ -1,7 +1,9 @@
+import 'package:WhatsAppX/screens/home/home_screens/home_widgets/silver_container.dart';
+import 'package:WhatsAppX/screens/home/home_screens/home_widgets/user_profile_app_bar.dart';
 import 'package:WhatsAppX/styles/colors.dart';
+import 'package:WhatsAppX/util/constants/icons_data.dart';
+import 'package:WhatsAppX/util/constants/profile_images.dart';
 import 'package:flutter/material.dart';
-import 'user_profile_widgets/silver_container.dart';
-import 'user_profile_widgets/user_profile_app_bar.dart';
 import 'user_profile_widgets/user_profile_gallery.dart';
 import 'user_profile_widgets/user_profile_gallery_title.dart';
 import 'user_profile_widgets/user_profile_options.dart';
@@ -12,45 +14,6 @@ class UserProfilePage extends StatefulWidget {
 }
 
 class _UserProfilePageState extends State<UserProfilePage> {
-  ScrollController _scrollController;
-  double kExpandedHeight = 400.0;
-  @override
-  void initState() {
-    super.initState();
-    _scrollController = ScrollController();
-    _scrollController.addListener(() => setState(() {}));
-  }
-
-  @override
-  void dispose() {
-    _scrollController.dispose();
-    super.dispose();
-  }
-
-  double get _horizontalTitlePadding {
-    const kBasePadding = 15.0;
-    const kMultiplier = 0.5;
-
-    if (_scrollController.hasClients) {
-      if (_scrollController.offset < (kExpandedHeight / 2)) {
-        // In case 50%-100% of the expanded height is viewed
-        return kBasePadding;
-      }
-
-      if (_scrollController.offset > (kExpandedHeight - kToolbarHeight)) {
-        // In case 0% of the expanded height is viewed
-        return (kExpandedHeight / 2 - kToolbarHeight) * kMultiplier +
-            kBasePadding;
-      }
-
-      // In case 0%-50% of the expanded height is viewed
-      return (_scrollController.offset - (kExpandedHeight / 2)) * kMultiplier +
-          kBasePadding;
-    }
-
-    return kBasePadding;
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -59,12 +22,16 @@ class _UserProfilePageState extends State<UserProfilePage> {
         top: false,
         child: Builder(
           builder: (context) => SliverContainer(
-            scrollController: _scrollController,
-            expandedHeight: kExpandedHeight,
+            actions: [
+              CustomIcons(color: whiteColor).callIcon,
+              CustomIcons(color: whiteColor).videoIcon,
+              CustomIcons(color: whiteColor, size: 26).messageIcon,
+            ],
             slivers: <Widget>[
               UserProfileAppBar(
-                kExpandedHeight: kExpandedHeight,
-                horizontalTitlePadding: _horizontalTitlePadding,
+                backgroundImage: user11,
+                userStatus: 'Online',
+                title: 'Kevin Dark',
               ),
               UserProfileGalleryTitle(),
               UserProfileGallery(),

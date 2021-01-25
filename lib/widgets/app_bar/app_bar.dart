@@ -5,7 +5,13 @@ import 'package:flutter/material.dart';
 class CustomAppBar extends PreferredSize {
   final double height;
   final String title;
-  const CustomAppBar({this.height = kToolbarHeight, @required this.title});
+  final List<Widget> actions;
+  final bool centerTitle;
+  const CustomAppBar(
+      {this.centerTitle,
+      this.actions,
+      this.height = kToolbarHeight,
+      @required this.title});
 
   @override
   Size get preferredSize => Size.fromHeight(height);
@@ -14,30 +20,18 @@ class CustomAppBar extends PreferredSize {
   Widget build(BuildContext context) {
     return AppBar(
       backgroundColor: darkHeaderColor,
+      centerTitle: centerTitle,
       leading: IconButton(
         onPressed: () {
           Navigator.pop(context);
         },
-        icon: Icon(Icons.arrow_back),
+        icon: CustomIcons(color: whiteColor).backArrowIcon,
       ),
       title: Text(
         title,
         style: TextStyle(color: whiteColor),
       ),
-      actions: <Widget>[
-        IconButton(
-          onPressed: () {},
-          color: primaryColor,
-          icon: CustomIcons(
-            size: 18,
-          ).searchIcon,
-        ),
-        IconButton(
-          onPressed: () {},
-          color: primaryColor,
-          icon: CustomIcons().optionIcon,
-        )
-      ],
+      actions: actions,
     );
   }
 }

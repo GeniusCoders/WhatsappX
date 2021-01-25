@@ -108,9 +108,16 @@ class CustomIcons {
 
   Icon get messageIcon => Icon(Icons.message, color: color, size: size);
   Icon get backArrowIcon => Icon(Icons.arrow_back, color: color, size: 24);
+  Icon get arrowDown => Icon(Icons.expand_more, color: color, size: 24);
 
   FaIcon get arrowUp => FaIcon(
         FontAwesomeIcons.chevronUp,
+        color: color,
+        size: size,
+      );
+
+  Icon get editIcon => Icon(
+        Icons.edit,
         color: color,
         size: size,
       );
