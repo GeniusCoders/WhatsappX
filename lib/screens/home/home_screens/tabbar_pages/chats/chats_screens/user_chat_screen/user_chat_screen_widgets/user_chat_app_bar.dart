@@ -1,4 +1,6 @@
+import 'package:WhatsAppX/screens/home/home_screens/call_screen/call_screen_view_page.dart';
 import 'package:WhatsAppX/screens/home/home_screens/home_widgets/custom_avatar.dart';
+import 'package:WhatsAppX/screens/home/home_screens/tabbar_pages/calls/call_page.dart';
 import 'package:WhatsAppX/screens/home/home_screens/tabbar_pages/chats/chats_screens/user_profile/user_profile_page.dart';
 import 'package:WhatsAppX/styles/colors.dart';
 import 'package:WhatsAppX/util/constants/icons_data.dart';
@@ -82,7 +84,12 @@ class UserChatAppBar extends PreferredSize {
                   icon: CustomIcons().videoIcon,
                 ),
                 IconButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => CallScreenViewPage()));
+                  },
                   icon: CustomIcons().callIcon,
                 ),
                 IconButton(
