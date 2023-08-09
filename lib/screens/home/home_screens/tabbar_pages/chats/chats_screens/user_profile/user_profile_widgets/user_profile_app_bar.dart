@@ -1,4 +1,3 @@
-import 'package:WhatsAppX/styles/colors.dart';
 import 'package:WhatsAppX/util/constants/profile_images.dart';
 import 'package:flutter/material.dart';
 
@@ -6,7 +5,7 @@ class UserProfileAppBar extends StatelessWidget {
   final double kExpandedHeight;
   final double horizontalTitlePadding;
   const UserProfileAppBar(
-      {@required this.kExpandedHeight, @required this.horizontalTitlePadding});
+      {required this.kExpandedHeight, required this.horizontalTitlePadding});
 
   @override
   Widget build(BuildContext context) {

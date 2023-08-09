@@ -2,10 +2,10 @@ import 'package:WhatsAppX/styles/colors.dart';
 import 'package:WhatsAppX/util/constants/icons_data.dart';
 import 'package:flutter/material.dart';
 
-class CustomAppBar extends PreferredSize {
+class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final double height;
   final String title;
-  const CustomAppBar({this.height = kToolbarHeight, @required this.title});
+  const CustomAppBar({this.height = kToolbarHeight, required this.title});
 
   @override
   Size get preferredSize => Size.fromHeight(height);

@@ -1,6 +1,5 @@
 import 'package:WhatsAppX/styles/colors.dart';
 import 'package:WhatsAppX/util/constants/icons_data.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class SliverContainer extends StatefulWidget {
@@ -10,11 +9,11 @@ class SliverContainer extends StatefulWidget {
   final double topScalingEdge;
   final ScrollController scrollController;
   SliverContainer(
-      {@required this.slivers,
-      this.expandedHeight,
+      {required this.slivers,
+      required this.expandedHeight,
       this.marginRight = 16.0,
       this.topScalingEdge = 96.0,
-      @required this.scrollController});
+      required this.scrollController});
 
   @override
   State<StatefulWidget> createState() {

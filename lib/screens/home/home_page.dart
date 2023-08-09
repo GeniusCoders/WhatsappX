@@ -14,14 +14,14 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
-  TabController _tabController;
+  late TabController _tabController;
 
   @override
   void initState() {
     super.initState();
     _tabController = TabController(length: 4, vsync: this, initialIndex: 1);
-    _tabController.animation.addListener(_handleAppBarAnimation);
-    _tabController.animation.addListener(_handleTabIndex);
+    _tabController.animation!.addListener(_handleAppBarAnimation);
+    _tabController.animation!.addListener(_handleTabIndex);
   }
 
   double _appBarTop = 0.0;
@@ -46,7 +46,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
           onWillPop: () {
             // shift to the right-handed-side tap;
             _tabController.animateTo(_cameraTapIndex + 1);
-            return null;
+            return Future(() => true);
           },
           child: CameraPage(),
         ),
@@ -58,8 +58,8 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
   }
 
   _handleAppBarAnimation() {
-    if (_tabController.animation.value <= 1.0 && _cameraTapIndex == 0) {
-      final value = _tabController.animation.value;
+    if (_tabController.animation!.value <= 1.0 && _cameraTapIndex == 0) {
+      final value = _tabController.animation!.value;
       final appBarHeight = _getappBarHeight(context);
 
       setState(() {
@@ -98,6 +98,8 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                 [
                   CustomTab(
                     isCameraIcon: true,
+                    text: '',
+                    yourWidth: 0,
                   ),
                   CustomTab(
                     text: 'Chat',
@@ -126,25 +128,25 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
   void dispose() {
     super.dispose();
     _tabController.dispose();
-    _tabController.animation.removeListener(_handleAppBarAnimation);
-    _tabController.animation.removeListener(_handleTabIndex);
+    _tabController.animation!.removeListener(_handleAppBarAnimation);
+    _tabController.animation!.removeListener(_handleTabIndex);
   }
 }
 
 bool getIsTabCamera(TabController tabController) {
-  return tabController.animation.value < 0.7;
+  return tabController.animation!.value < 0.7;
 }
 
 bool getIsChatList(TabController tabController) {
-  return tabController.animation.value > 0.7 &&
-      tabController.animation.value < 1.7;
+  return tabController.animation!.value > 0.7 &&
+      tabController.animation!.value < 1.7;
 }
 
 bool getIsStatusList(TabController tabController) {
-  return tabController.animation.value > 1.7 &&
-      tabController.animation.value < 2.7;
+  return tabController.animation!.value > 1.7 &&
+      tabController.animation!.value < 2.7;
 }
 
 bool getIsCallList(TabController tabController) {
-  return tabController.animation.value > 2.7;
+  return tabController.animation!.value > 2.7;
 }

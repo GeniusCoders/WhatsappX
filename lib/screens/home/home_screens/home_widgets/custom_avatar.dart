@@ -13,7 +13,7 @@ class CustomAvatar extends StatelessWidget {
       {this.radius = 20,
       this.isShowActiveIcon = false,
       this.userStatus = UserStatus.online,
-      @required this.imgUrl});
+      required this.imgUrl});
 
   _getStatusColor() {
     if (userStatus == UserStatus.offline) {
@@ -53,7 +53,7 @@ class CustomAvatar extends StatelessWidget {
 class OnlineOfflineDot extends StatelessWidget {
   final Color color;
 
-  const OnlineOfflineDot({@required this.color});
+  const OnlineOfflineDot({required this.color});
 
   @override
   Widget build(BuildContext context) {

@@ -12,7 +12,7 @@ class UserProfilePage extends StatefulWidget {
 }
 
 class _UserProfilePageState extends State<UserProfilePage> {
-  ScrollController _scrollController;
+  late ScrollController _scrollController;
   double kExpandedHeight = 400.0;
   @override
   void initState() {

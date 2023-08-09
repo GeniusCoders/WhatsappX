@@ -3,9 +3,9 @@ import 'package:WhatsAppX/util/constants/icons_data.dart';
 import 'package:flutter/material.dart';
 
 class UserChatTextField extends StatelessWidget {
-  final Function onTap;
+  final Function()? onTap;
 
-  const UserChatTextField({@required this.onTap});
+  const UserChatTextField({required this.onTap});
 
   @override
   Widget build(BuildContext context) {

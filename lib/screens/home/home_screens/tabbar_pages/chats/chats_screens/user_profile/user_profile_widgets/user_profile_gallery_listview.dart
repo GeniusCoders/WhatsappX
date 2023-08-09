@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class UserProfileGalleryListView extends StatelessWidget {
   final List list;
   final double height;
-  const UserProfileGalleryListView({@required this.list, this.height = 220.0});
+  const UserProfileGalleryListView({required this.list, this.height = 220.0});
 
   @override
   Widget build(BuildContext context) {

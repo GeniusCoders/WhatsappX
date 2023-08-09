@@ -8,7 +8,7 @@ class StatusAvatar extends StatelessWidget {
   final bool isMe;
   final UserStatusModel userStatus;
 
-  StatusAvatar({this.isMe = false, @required this.userStatus});
+  StatusAvatar({this.isMe = false, required this.userStatus});
 
   @override
   Widget build(BuildContext context) {

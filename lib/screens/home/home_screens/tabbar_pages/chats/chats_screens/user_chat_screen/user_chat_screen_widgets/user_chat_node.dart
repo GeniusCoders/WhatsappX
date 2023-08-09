@@ -5,7 +5,7 @@ class UserChatNode extends StatelessWidget {
   final String chatText;
   final String chatType;
 
-  UserChatNode({this.chatText, this.chatType});
+  UserChatNode({required this.chatText, required this.chatType});
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +26,7 @@ class UserChatNode extends StatelessWidget {
 class SendChatNode extends StatelessWidget {
   final String text;
 
-  SendChatNode({Key key, @required this.text}) : super(key: key);
+  SendChatNode({required this.text});
 
   @override
   Widget build(BuildContext context) {
@@ -64,7 +64,7 @@ class SendChatNode extends StatelessWidget {
 class ReceiveChatNode extends StatelessWidget {
   final String text;
 
-  ReceiveChatNode({Key key, @required this.text}) : super(key: key);
+  ReceiveChatNode({required this.text});
 
   @override
   Widget build(BuildContext context) {

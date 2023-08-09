@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 class ListHeading extends StatelessWidget {
   final String text;
   final Color color;
-  const ListHeading({@required this.text, this.color = primaryColor});
+  const ListHeading({required this.text, this.color = primaryColor});
 
   @override
   Widget build(BuildContext context) {

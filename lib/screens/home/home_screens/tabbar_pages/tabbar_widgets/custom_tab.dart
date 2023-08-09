@@ -9,7 +9,10 @@ class CustomTab extends StatelessWidget {
   final double height;
 
   const CustomTab(
-      {this.text, this.yourWidth, this.isCameraIcon = false, this.height = 46});
+      {required this.text,
+      required this.yourWidth,
+      this.isCameraIcon = false,
+      this.height = 46});
 
   getW() {
     return AppBar();

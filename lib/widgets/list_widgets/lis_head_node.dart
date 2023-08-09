@@ -10,9 +10,7 @@ class ListHeadNode extends StatelessWidget {
   final Widget trailingWidget;
 
   const ListHeadNode(
-      {@required this.icon,
-      @required this.title,
-      @required this.trailingWidget});
+      {required this.icon, required this.title, required this.trailingWidget});
 
   @override
   Widget build(BuildContext context) {

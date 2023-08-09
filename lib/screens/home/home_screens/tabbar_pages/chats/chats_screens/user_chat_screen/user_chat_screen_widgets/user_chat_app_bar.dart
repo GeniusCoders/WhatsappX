@@ -6,7 +6,7 @@ import 'package:WhatsAppX/util/constants/profile_images.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-class UserChatAppBar extends PreferredSize {
+class UserChatAppBar extends StatelessWidget implements PreferredSizeWidget {
   final double height;
   final avatarRadius = 20.0;
   final defaultIconButtonPadding = 8.0;

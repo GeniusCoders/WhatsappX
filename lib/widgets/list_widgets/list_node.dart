@@ -8,9 +8,10 @@ import 'list_trailing.dart';
 
 class ListNode extends StatelessWidget {
   final bool isTrailing;
-  final String title;
-  final String subtitle;
-  const ListNode({this.isTrailing = false, this.title, this.subtitle});
+
+  const ListNode({
+    this.isTrailing = false,
+  });
 
   @override
   Widget build(BuildContext context) {

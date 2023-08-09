@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 class ListTitle extends StatelessWidget {
   final String text;
-  const ListTitle({this.text});
+  const ListTitle({required this.text});
 
   @override
   Widget build(BuildContext context) {

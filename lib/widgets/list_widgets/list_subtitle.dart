@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 class ListSubtitle extends StatelessWidget {
   final String text;
 
-  const ListSubtitle({this.text});
+  const ListSubtitle({required this.text});
 
   @override
   Widget build(BuildContext context) {

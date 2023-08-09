@@ -9,12 +9,14 @@ List attachmentsList = [
   {"image": "attach_gallery.png", "title": "Gallery"},
   {"image": "attach_location.png", "title": "Location"},
   {"image": "attach_audio.png", "title": "Audio"},
+  {"image": "attach_audio.png", "title": "Audio"},
+  {"image": "attach_contact.png", "title": "Contact"},
 ];
 
 class ChatAttachmentBox extends StatelessWidget {
   final Animation<double> animation;
 
-  const ChatAttachmentBox({@required this.animation});
+  const ChatAttachmentBox({required this.animation});
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +24,7 @@ class ChatAttachmentBox extends StatelessWidget {
       child: Container(
         width: 300,
         height: 220,
-        padding: EdgeInsets.all(10),
+        padding: EdgeInsets.all(20),
         decoration: BoxDecoration(
           color: darkHeaderColor,
           borderRadius: BorderRadius.circular(10),

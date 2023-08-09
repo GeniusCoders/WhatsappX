@@ -84,7 +84,7 @@ _buildPopupMenuButton(TabController tabController) {
           return PopupMenuItem(
             value: item['value'],
             child: Text(
-              item['label'],
+              item['label'].toString(),
               style: TextStyle(color: whiteColor),
             ),
           );
@@ -106,7 +106,8 @@ _buildPopupMenuButton(TabController tabController) {
         ].map((item) {
           return PopupMenuItem(
             value: item['value'],
-            child: Text(item['label'], style: TextStyle(color: whiteColor)),
+            child: Text(item['label'].toString(),
+                style: TextStyle(color: whiteColor)),
           );
         }).toList();
       },

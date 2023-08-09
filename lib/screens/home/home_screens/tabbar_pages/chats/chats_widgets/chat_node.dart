@@ -9,7 +9,7 @@ import 'package:flutter/material.dart';
 class ChatNode extends StatelessWidget {
   final UserChat userChat;
 
-  const ChatNode({@required this.userChat});
+  const ChatNode({required this.userChat});
 
   @override
   Widget build(BuildContext context) {
