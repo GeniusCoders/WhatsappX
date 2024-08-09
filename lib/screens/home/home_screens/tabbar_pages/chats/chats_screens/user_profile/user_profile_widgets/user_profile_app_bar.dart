@@ -18,7 +18,7 @@ class UserProfileAppBar extends StatelessWidget {
         title: Transform.translate(
           offset: Offset(-40, -10),
           child: Container(
-            height: 60,
+            height: 40,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [

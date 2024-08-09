@@ -17,11 +17,11 @@ class MyApp extends StatelessWidget {
             darkModeOn ? Brightness.light : Brightness.dark));
     return MaterialApp(
         title: 'WhatsAppX',
-        theme: ThemeData(
-          fontFamily: 'Poppins',
-          primarySwatch: MaterialColor(0xFF06A88E, getSwatch(primaryColor)),
-          visualDensity: VisualDensity.adaptivePlatformDensity,
-        ),
+        theme: ThemeData.dark(useMaterial3: true).copyWith(
+            colorScheme: ColorScheme.fromSeed(
+          seedColor: primaryColor,
+          brightness: Brightness.dark,
+        )),
         debugShowCheckedModeBanner: false,
         home: HomePage());
   }

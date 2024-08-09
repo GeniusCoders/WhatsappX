@@ -58,6 +58,7 @@ buildCustomAppBar(
           labelColor: primaryColor,
           unselectedLabelColor: darkGrey,
           indicatorSize: TabBarIndicatorSize.label,
+          tabAlignment: TabAlignment.start,
           indicatorWeight: 3.0,
         ),
       ],

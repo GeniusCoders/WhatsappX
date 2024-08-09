@@ -37,7 +37,7 @@ class SliverFabState extends State<SliverContainer> {
 
   Widget _buildFab() {
     //starting fab position
-    final double defaultTopMargin = widget.expandedHeight + 12;
+    final double defaultTopMargin = widget.expandedHeight + 26;
     //pixels from top where scaling should start
     final double scaleStart = 96.0;
     //pixels from top where scaling should end
@@ -72,9 +72,8 @@ class SliverFabState extends State<SliverContainer> {
               padding: EdgeInsets.all(2),
               width: 50,
               height: 50,
-              decoration: BoxDecoration(
-                  color: backgroundColor,
-                  borderRadius: BorderRadius.circular(34)),
+              decoration:
+                  BoxDecoration(borderRadius: BorderRadius.circular(34)),
               child: FittedBox(
                 child: FloatingActionButton(
                     heroTag: 'callIcon',
@@ -89,9 +88,8 @@ class SliverFabState extends State<SliverContainer> {
               padding: EdgeInsets.all(2),
               width: 50,
               height: 50,
-              decoration: BoxDecoration(
-                  color: backgroundColor,
-                  borderRadius: BorderRadius.circular(34)),
+              decoration:
+                  BoxDecoration(borderRadius: BorderRadius.circular(34)),
               child: FittedBox(
                 child: FloatingActionButton(
                   heroTag: 'video',
@@ -107,9 +105,8 @@ class SliverFabState extends State<SliverContainer> {
               padding: EdgeInsets.all(2),
               width: 50,
               height: 50,
-              decoration: BoxDecoration(
-                  color: backgroundColor,
-                  borderRadius: BorderRadius.circular(34)),
+              decoration:
+                  BoxDecoration(borderRadius: BorderRadius.circular(34)),
               child: FittedBox(
                 child: FloatingActionButton(
                   heroTag: 'chat',
